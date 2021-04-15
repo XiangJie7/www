@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	<title></title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!--小動圖 Spinkit-->
+	<link rel="stylesheet" type="text/css" href="css/spinkit.css">
+	<style>
+		.example {
+			margin: 100px 100px;
+			padding: 5px;
+		}
+	</style>
+	<!--小動圖-->
+	<!--上下切割特效 multiScroll-->
+	<link rel="stylesheet" type="text/css" href="css/c/jquery.multiscroll.css" />
+	<link rel="stylesheet" type="text/css" href="css/c/examples.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/c/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="js/c/jquery.multiscroll.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#myContainer').multiscroll({
+				anchors: ['first', 'second', 'third'],
+				menu: '#menu',
+				css3: true,
+				paddingTop: '70px',
+				paddingBottom: '70px',
+				responsiveWidth: 900,
+				responsiveExpand: true
+			});
+		});
+	</script>
+	<style type="text/css">
+		.section3 .intro {
+			width: 100%;
+			text-align: center;
+		}
+
+		.section3 .intro p {
+			text-align: center;
+			color: rgba(255, 255, 255, 0.9);
+
+		}
+
+		.section3 .intro {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		#section3-left .intro {
+			left: 50%;
+		}
+
+		#section3-right .intro {
+			right: 50%
+		}
+
+		#section3-left h1,
+		#section3-right h1 {
+			width: 100%;
+
+			color: white;
+			z-index: 999;
+			font-weight: bold;
+			text-align: center;
+
+			display: block;
+			margin: 0;
+			padding: 0;
+			font-size: 7em;
+		}
+
+		#section3-left {
+			background: #EC6367;
+		}
+
+		#section3-left h1 {
+			left: 50%;
+		}
+
+		#section2-left {
+			background: #fff;
+			color: #a7a7a7;
+		}
+
+		#section2-left .intro {
+			padding: 0 0 60px 0;
+		}
+
+		#section2-left .intro:last-child {
+			padding: 0;
+		}
+
+		#section2-left h2 {
+			font-size: 1.7em;
+		}
+
+		#section1-left {
+			background-color: #27474E;
+			background-image: url('imgs/cards.jpg');
+			background-repeat: no-repeat;
+			background-position: 50%;
+		}
+
+		#section3-right h1 {
+			left: -50%;
+		}
+
+		#section3-right {
+			background-color: #EC6367;
+			background-image: url(imgs/girl.jpg);
+			background-repeat: no-repeat;
+			background-position: 50%;
+			text-align: center;
+
+		}
+
+		#section3-right.hideOverflow {
+			overflow: hidden;
+		}
+
+		#section2-right {
+			background: #ffe164;
+			text-align: center;
+			background-image: url(imgs/phone.png);
+			background-position: 100% 100%;
+			background-repeat: no-repeat;
+		}
+
+		#section1-right {
+			background: #66D7D1;
+			text-align: center;
+			color: #fff;
+		}
+
+		#section1-right h2 {
+			color: #fff;
+		}
+
+		.button a {
+			background: #fff;
+			color: #e7413b;
+		}
+
+		.ms-responsive #section1-left .intro {
+			left: 0;
+		}
+
+		.ms-responsive #section1-right .intro {
+			display: none;
+		}
+
+		/*
+		* Improving design in small resolutions
+		*/
+		@media all and (max-width:700px) {
+
+			#section3-left h1,
+			#section3-right h1 {
+				font-size: 5em;
+			}
+		}
+
+		@media all and (max-width:550px) {
+
+			#section3-left h1,
+			#section3-right h1 {
+				font-size: 4em;
+			}
+		}
+
+		@media all and (max-width:400px) {
+
+			#section3-left h1,
+			#section3-right h1 {
+				font-size: 3em;
+			}
+
+			.section3 .intro p {
+				font-size: 1em;
+			}
+		}
+
+		#header,
+		#footer {
+			position: fixed;
+			height: 100px;
+			display: block;
+			width: 100%;
+			z-index: 9;
+			text-align: center;
+			color: #f2f2f2;
+
+		}
+
+		#header {
+			top: 0px;
+			background: #333;
+			padding: 20px 0 0 0;
+		}
+
+		#footer {
+			bottom: 0px;
+			background: #333;
+			padding: 20px 0 0 0;
+		}
+	</style>
+	<!--上下切割特效-->
+</head>
+
+<body>
+
+	<div id="header">
+	</div>
+	<div id="footer"></div>
+
+	<div id="myContainer">
+
+		<div id="left-side" class="ms-left">
+
+			<div class="ms-section section1" id="section1-left">
+				<div class="example">
+					<div class="sk-grid">
+						<div class="sk-grid-cube"></div>
+						<div class="sk-grid-cube"></div>
+						<div class="sk-grid-cube"></div>
+						<div class="sk-grid-cube"></div>
+						<div class="sk-grid-cube"></div>
+						<div class="sk-grid-cube"></div>
+						<div class="sk-grid-cube"></div>
+						<div class="sk-grid-cube"></div>
+						<div class="sk-grid-cube"></div>
+					</div>
+				</div>
+			</div>
+			<div class="ms-section section2" id="section2-left">
+				<div class="intro">
+					<h1 style="color:grey;">又或是深怕請到來歷不明的保母?</h1>
+				</div>
+			</div>
+			<div class="ms-section section3" id="section3-left">
+				<div class="intro">
+					<h1>99%自學幼兒園</h1>
+					<p>安全 信賴 有保障<br /></p>
+					<a href="https://gum.co/multiscrollResponsiveExpand"><button type="button" class="btn btn-primary text-light">立即加入!</button></a>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<div id="right-side" class="ms-right">
+			<div class="ms-section section1" id="section1-right">
+				<div class="intro">
+					<h1 style="color: white;">沒時間照顧小孩?</h1>
+				</div>
+			</div>
+
+			<div class="ms-section section2" id="section2-right">
+				<div class="example">
+					<div class="sk-wander">
+						<div class="sk-wander-cube"></div>
+						<div class="sk-wander-cube"></div>
+						<div class="sk-wander-cube"></div>
+					</div>
+				</div>
+			</div>
+			<div class="ms-section section3" id="section3-right">
+				<div class="intro">
+					<h1>99%自學幼兒園</h1>
+					<p>安全 信賴 有保障<br /></p>
+					<a href="index2.html"><button type="button" class="btn btn-primary text-light">立即加入!</button></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</div>
+
+
+
+
+
+	<input type="hidden" id="_4" value="3" />
+
+
+
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.7/holder.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

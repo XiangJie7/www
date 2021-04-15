@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title></title>
+		<!--公告用-->
+	<link href="css/b/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/b/offcanvas.css" rel="stylesheet">
+		<!--公告用end-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Bookblock: A Content Flip Plugin - Demo 2" />
+    <meta name="keywords" content="javascript, jquery, plugin, css3, flip, page, 3d, booklet, book, perspective" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+    <!-- custom demo style -->
+    <link rel="stylesheet" type="text/css" href="css/demo2.css" />
+    <link rel="stylesheet" type="text/css" href="css/calendar.css" />
+    <script src="js/modernizr.custom.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- 自行添加區 -->
+    <!-- 網頁進度條 QueryLoader-->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="js/queryloader2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', function() {
+            new QueryLoader2(document.querySelector("body"), {
+                barColor: "#e6e6fa",
+                backgroundColor: "#696969",
+                percentage: true,
+                barHeight: 1,
+                minimumTime: 200,
+                fadeOutTime: 1000
+            });
+        });
+    </script>
+    <!-- 網頁進度條 -->
+	<!--上下切割特效-->
+	<link rel="stylesheet" type="text/css" href="css/c/jquery.multiscroll.css" />		
+	<link rel="stylesheet" type="text/css" href="css/c/examples.css" />		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/c/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="js/c/jquery.multiscroll.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#myContainer').multiscroll({
+				sectionsColor: ['#eee8aa', '#6495ed', '#faf0e6'],
+				anchors: ['first', 'second', 'third'],
+				menu: '#menu',
+				navigation: true,
+				navigationTooltips: ['One', 'Two', 'Three'],
+				loopBottom: true,
+				loopTop: true,
+				sectionSelector: '.section',
+				leftSelector: '.left',
+				rightSelector: '.right',
+			});
+		});
+	</script>
+	<!--上下切割特效-->
+	<!--圖專 tilt-->
+	<style>
+		html, body {
+		  width: 100%;
+		  height: 100%;
+		  margin: 0;
+		  padding: 0;
+		  display: -webkit-box;
+		  display: -moz-box;
+		  display: -ms-flexbox;
+		  display: -webkit-flex;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		}
+	
+		a {
+		  text-decoration: none;
+		  color: #333;
+		}
+	
+		.logo {
+		  display: block;
+	
+		  width: 100%;
+		  max-width: 200px;
+		  height: 200px;
+	
+		  line-height: 200px;
+		  text-align: center;
+	
+		  color: white;
+		  font-size: 2em;
+	
+		  background: #0099F7; /* fallback for old browsers */
+		  background: -webkit-linear-gradient(135deg, #0099F7, #F11712); /* Chrome 10-25, Safari 5.1-6 */
+		  background: linear-gradient(135deg, #0099F7, #F11712); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+		  -webkit-transform-style: preserve-3d;
+		  transform-style: preserve-3d;
+		  -webkit-transform: perspective(500px);
+		  transform: perspective(500px);
+		  margin-bottom: 75px;
+		}
+	
+		.logo > span {
+		  position: relative;
+		  display: block;
+		  -webkit-transform: translateZ(50px) scale(0.7);
+		  transform: translateZ(50px) scale(0.7);
+		}
+	
+		.logo > span:after {
+		  content: "GitHub";
+		  position: absolute;
+		  color: white;
+		  font-size: 18px;
+		  top: 36px;
+		  left: 50%;
+		  transform: translateX(-50%);
+	
+		  opacity: 0.8;
+	
+		  transition: 0.3s ease all;
+		}
+	
+		.logo > span:before {
+		  content: "View source";
+		  position: absolute;
+		  color: white;
+		  font-size: 18px;
+		  top: 36px;
+		  left: 50%;
+		  transform: translateX(-50%) translateY(-10px);
+	
+		  opacity: 0;
+	
+		  display: inline-block;
+		  width: 100%;
+	
+		  transition: 0.3s ease all;
+		}
+	
+		.logo:hover > span:after {
+		  opacity: 0;
+		  transform: translateX(-50%) translateY(10px);
+		}
+	
+		.logo:hover > span:before {
+		  opacity: 0.8;
+		  transform: translateX(-50%);
+		}
+	
+		.logo > span > span {
+		  display: block;
+		  font-size: 12px;
+		}
+	
+		.logo:after {
+		  content: '';
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  height: 100%;
+		  width: 100%;
+		  background-color: #333;
+		  box-shadow: 0 20px 70px -10px rgba(51, 51, 51, 0.7), 0 50px 100px 0 rgba(51, 51, 51, 0.2);
+		  z-index: -1;
+		  -webkit-transform: translateZ(-50px);
+		  transform: translateZ(-50px);
+		  -webkit-transition: .3s;
+		  transition: .3s;
+		}
+	  </style>
+	<!--圖專END-->
+</head>
+<body>
+
+	<ul id="menu">
+		<nav class="navbar navbar-expand-sm navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand text-success" href="index.html">99%自學幼兒園</a>
+				<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+					data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="collapsibleNavId">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item active">
+							<a class="nav-link" href="招生資訊/index.html">招生資訊<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="防疫專區/防疫專區.html">防疫專區</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="校園花絮/首.html">校園花絮</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="師資陣容/teachers.html">師資介紹</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">選單</a>
+							<div class="dropdown-menu" aria-labelledby="dropdownId">
+								<a class="dropdown-item" href="招生資訊/index.html">招生資訊</a>
+								<a class="dropdown-item" href="防疫專區/防疫專區.html">防疫專區</a>
+								<a class="dropdown-item" href="校園花絮/首.html">校園花絮</a>
+								<a class="dropdown-item" href="師資陣容/teachers.html">師資介紹</a>
+								<a class="dropdown-item" href="examples.html">招生廣告</a>
+							</div>
+						</li>
+					</ul>
+					<form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="text" placeholder="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+	</ul>
+
+<div id="myContainer">
+
+	<div class="left my-5">
+		<div class="section" id="left1">
+			<div class="graduated"></div>
+			<div class="fullscreen">
+			<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+				<img class="mr-3" src="img/8.jpg" alt="" width="48" height="48">
+				<div class="lh-100">
+				  <h6 class="mb-0 text-white lh-100">園所公告</h6>
+				  <small>Since 2021</small>
+				</div>
+			  </div>
+			  <div class="my-3 p-3 bg-light rounded shadow-sm">
+				<h6 class="border-bottom border-gray pb-2 mb-0 text-info">最新消息</h6>
+				<div class="media text-muted pt-3">
+				  <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+			
+				  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray text-primary">
+					<strong class="d-block text-warning">防疫公告</strong>
+					為落實防疫,進入院所請務必攜帶口罩;未攜帶者禁止進入
+				  </p>
+				</div>
+				<div class="media text-muted pt-3">
+				  <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"/><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+			
+				  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray text-primary">
+					<strong class="d-block text-warning">校園焦點</strong>
+					賀!!! 張同學通過魔鬼級心算認證
+				  </p>
+				</div>
+				<div class="media text-muted pt-3">
+				  <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"/><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+			
+				  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray text-primary">
+					<strong class="d-block text-warning">行政公告</strong>
+					110/04/30(五)第一、二期教學大樓教室課程調整
+				  </p>
+				</div>
+			  </div>
+			</div>
+		</div>
+
+		<div class="section my-3" id="left2">
+			<h6>行事曆</h6>
+			                    <!-- 書本 -->
+								<div class="container">
+									<div class="main clearfix">
+										<div class="bb-custom-wrapper">
+											<div id="bb-bookblock" class="bb-bookblock">
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/animals" alt="image01"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 1月 </h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows "><div class="fc-head bg-warning"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div class="fc-content"><span class="fc-date">1</span><span class="fc-weekday">Tue</span><div><span></span></div></div><div><span class="fc-date">2</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">7</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">14</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">21</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">28</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">31</span><span class="fc-weekday">Thu</span></div><div></div><div></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/nature" alt="image02"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 2月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-primary"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div></div><div></div><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">4</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">11</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">18</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">25</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Thu</span></div><div></div><div></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/animals/01" alt="image03"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 3月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-success"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div></div><div></div><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">4</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">11</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">18</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">25</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">31</span><span class="fc-weekday">Sun</span></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/nature/01" alt="image04"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 4月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-secondary"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div><span class="fc-date">1</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">8</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">15</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">22</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">29</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Tue</span></div><div></div><div></div><div></div><div></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/animals/02" alt="image05"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 5月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-primary"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">6</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">13</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">20</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">27</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">31</span><span class="fc-weekday">Fri</span></div><div></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/nature/02" alt="image06"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 6月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-success"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div></div><div></div><div></div><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">3</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">10</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">17</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">24</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Sun</span></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/animals/03" alt="image07"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 7月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-warning"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div><span class="fc-date">1</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">8</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">15</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">22</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">29</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">31</span><span class="fc-weekday">Wed</span></div><div></div><div></div><div></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/nature/04" alt="image08"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 8月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-danger"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div></div><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">5</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">12</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">19</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">26</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">31</span><span class="fc-weekday">Sat</span></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/animals/05" alt="image09"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 9月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-six-rows"><div class="fc-head bg-secondary"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div></div><div></div><div></div><div></div><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">2</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">9</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">16</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">23</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">30</span><span class="fc-weekday">Mon</span></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/nature/06" alt="image10"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 10月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-primary"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">7</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">14</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">21</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">28</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">31</span><span class="fc-weekday">Thu</span></div><div></div><div></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/animals/07" alt="image11"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 11月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-five-rows"><div class="fc-head bg-success"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div></div><div></div><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">2</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">4</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">9</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">11</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">16</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">18</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">23</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">25</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">30</span><span class="fc-weekday">Sat</span></div><div></div></div></div></div></div>
+													</div>
+												</div>
+												<div class="bb-item">
+													<img class="bb-custom-img" src="https://placeimg.com/560/300/nature/08" alt="image12"/>
+													<div class="fc-calendar-wrap">
+														<h2>行事曆 2021 12月</h2>
+														<div class="fc-calendar-container"><div class="fc-calendar fc-six-rows"><div class="fc-head info"><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div><div>Sunday</div></div><div class="fc-body"><div class="fc-row"><div></div><div></div><div></div><div></div><div></div><div></div><div><span class="fc-date">1</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">2</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">3</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">4</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">5</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">6</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">7</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">8</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">9</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">10</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">11</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">12</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">13</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">14</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">15</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">16</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">17</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">18</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">19</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">20</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">21</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">22</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">23</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">24</span><span class="fc-weekday">Tue</span></div><div><span class="fc-date">25</span><span class="fc-weekday">Wed</span></div><div><span class="fc-date">26</span><span class="fc-weekday">Thu</span></div><div><span class="fc-date">27</span><span class="fc-weekday">Fri</span></div><div><span class="fc-date">28</span><span class="fc-weekday">Sat</span></div><div><span class="fc-date">29</span><span class="fc-weekday">Sun</span></div></div><div class="fc-row"><div><span class="fc-date">30</span><span class="fc-weekday">Mon</span></div><div><span class="fc-date">31</span><span class="fc-weekday">Tue</span></div><div></div><div></div><div></div><div></div><div></div></div></div></div></div>
+													</div>
+												</div>
+											</div>
+											<nav>
+												<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
+												<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
+											</nav>
+										</div>
+									</div>
+								</div>
+								<!-- /書本 -->
+		</div>
+
+		<div class="section my-3" id="left3">
+			<h5>----</h5>
+			<div class="container">
+			<H1>院所環境</H1>
+			<div class="row justify-content-start"><a href="" class="logo mr-3" id="logo"data-tilt data-tilt-glare="true"data-tilt-max-glare="0.5"data-tilt-speed="400"data-tilt-scale="1.1"data-tilt-perspective="500"data-tilt-max="15"data-tilt-startX="15"data-tilt-startY="10"data-tilt-scale="1.1"><img class="bb-custom-img" src="img/c.jpg" alt="image01"/></a>
+				<a href="examples.html" class="logo mr-3" id="logo"data-tilt data-tilt-glare="true"data-tilt-max-glare="0.5"data-tilt-speed="400"data-tilt-scale="1.1"data-tilt-perspective="500"data-tilt-max="15"data-tilt-startX="15"data-tilt-startY="10"data-tilt-scale="1.1"><img class="bb-custom-img" src="img/c.png" alt="image01"/></a>
+				<a href="examples.html" class="logo mr-3" id="logo"data-tilt data-tilt-glare="true"data-tilt-max-glare="0.5"data-tilt-speed="400"data-tilt-scale="1.1"data-tilt-perspective="500"data-tilt-max="15"data-tilt-startX="15"data-tilt-startY="10"data-tilt-scale="1.1"><img class="bb-custom-img" src="img/f.jpg" alt="image01"/></a>
+			</div>
+			<div class="row justify-content-end"><a href="" class="logo mr-3" id="logo"data-tilt data-tilt-glare="true"data-tilt-max-glare="0.5"data-tilt-speed="400"data-tilt-scale="1.1"data-tilt-perspective="500"data-tilt-max="15"data-tilt-startX="15"data-tilt-startY="10"data-tilt-scale="1.1"><img class="bb-custom-img" src="img/r.jpg" alt="image01"/></a>
+				<a href="examples.html" class="logo mr-3" id="logo"data-tilt data-tilt-glare="true"data-tilt-max-glare="0.5"data-tilt-speed="400"data-tilt-scale="1.1"data-tilt-perspective="500"data-tilt-max="15"data-tilt-startX="15"data-tilt-startY="10"data-tilt-scale="1.1"><img class="bb-custom-img" src="img/s.jpg" alt="image01"/></a>
+				<a href="examples.html" class="logo mr-3" id="logo"data-tilt data-tilt-glare="true"data-tilt-max-glare="0.5"data-tilt-speed="400"data-tilt-scale="1.1"data-tilt-perspective="500"data-tilt-max="15"data-tilt-startX="15"data-tilt-startY="10"data-tilt-scale="1.1"><img class="bb-custom-img" src="img/t.jpg" alt="image01"/></a>
+			</div>	
+				
+			</div>	
+			</div>
+		</div>
+	</div>
+	
+	<div class="right">
+		<div class="section my-5" id="right1">
+			<img class="mr-3" src="img/ccc.png" alt="" width="480" height="480">
+		</div>
+
+		<div class="section" id="right2">
+			<div class="container">
+				<h6 class=""><small>入學</small></h6>
+				<h6 class=""><small>入學</small></h6>
+				<h6 class=""><small>入學</small></h6>
+				<h1 class="my-3">入學<small>方案</small></h1>
+				<div class="row">
+					<div class="col-lg-4 mb-4">
+					 <div class="card text-center border-info">
+						 <h2 class="card-header bg-info text-light">一般入學</h2>
+						 <div class="card-body">
+							 <div class="display-4">$3000</div>
+							 <div class="font-italic">每學期學費</div>
+						 </div>
+						 <ul class="list group">
+							 <li class="list-group-item">教學時間:半天</li>
+							 <li class="list-group-item">教學內容:40%</li>
+							 <li class="list-group-item">不含早餐;午餐;下午茶</li>
+							 <li class="list-group-item">無床鋪</li>
+							 <li class="list-group-item">
+								 <a href="#" class="btn btn-lg btn-info btn-block">訂購方案</a>
+							 </li>
+							 
+						 </ul>
+					</div>
+		 
+				   </div>
+					 <div class="col-lg-4 mb-4">
+						 <div class="card text-center  border-success">
+							 <h2 class="card-header bg-success text-warning ">中班入學</h2>
+							 <div class="card-body">
+								 <div class="display-4"> $3500</div>
+								 <div class="font-italic">每學期學費</div>
+							 </div>
+							 <ul class="list group">
+								<li class="list-group-item">教學時間:整天</li>
+								<li class="list-group-item">教學內容:75%</li>
+								<li class="list-group-item">含早餐;午餐;不含下午茶</li>
+								<li class="list-group-item">無床鋪</li>
+								<li class="list-group-item">
+									<a href="#" class="btn btn-lg btn-info btn-block">訂購方案</a>
+								</li>
+							 </ul>
+						</div>
+			 
+					 </div>
+		 
+					 <div class="col-lg-4 mb-4">
+						 <div class="card text-center border-warning">
+							 <h2 class="card-header bg-warning text-primary">大班入學</h2>
+							 <div class="card-body">
+								 <div class="display-4">$4000</div>
+								 <div class="font-italic">每學期學費</div>
+							 </div>
+							 <ul class="list group">
+								<li class="list-group-item">教學時間:整天(可課後加強練習)</li>
+								<li class="list-group-item">教學內容:100%</li>
+								<li class="list-group-item">含早餐;午餐;下午茶</li>
+								<li class="list-group-item">有床鋪</li>
+								<li class="list-group-item">
+									<a href="#" class="btn btn-lg btn-info btn-block">訂購方案</a>
+								</li>
+							 </ul>
+						</div>
+					 </div>
+				</div>
+			 </div>
+		</div>
+
+		<div class="section my-5" id="right3">
+			<iframe src="examples.html" width="800" height="700"></iframe>
+
+		</div>
+	</div>	
+</div>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.7/holder.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+	<!--書本翻頁bookblock-->
+	<script src="js/jquery.bookblock.js"></script>
+	    <script>
+        var Page = (function() {
+            
+            var config = {
+                    $bookBlock : $( '#bb-bookblock' ),
+                    $navNext : $( '#bb-nav-next' ),
+                    $navPrev : $( '#bb-nav-prev' )
+                },
+                init = function() {
+                    config.$bookBlock.bookblock( {
+                        orientation : 'horizontal',
+                        speed : 700
+                    } );
+                    initEvents();
+                },
+                initEvents = function() {
+
+                    var $slides = config.$bookBlock.children();
+                    
+                    // add navigation events
+                    config.$navNext.on( 'click touchstart', function() {
+                        config.$bookBlock.bookblock( 'next' );
+                        return false;
+                    } );
+
+                    config.$navPrev.on( 'click touchstart', function() {
+                        config.$bookBlock.bookblock( 'prev' );
+                        return false;
+                    } );
+
+                    // add keyboard events
+                    $( document ).keydown( function(e) {
+                        var keyCode = e.keyCode || e.which,
+                            arrow = {
+                                left : 37,
+                                up : 38,
+                                right : 39,
+                                down : 40
+                            };
+
+                        switch (keyCode) {
+                            case arrow.up:
+                                config.$bookBlock.bookblock( 'prev' );
+                                e.preventDefault();
+                                break;
+                            case arrow.down:
+                                config.$bookBlock.bookblock( 'next' );
+                                e.preventDefault();
+                                break;
+                        }
+
+                    } );
+                };
+
+                return { init : init };
+
+        })();
+    </script>
+    <script>
+            Page.init();
+    </script>
+    <!--書本翻頁end-->
+
+	<!--翻專式圖片-->
+	<script type="text/javascript" src="js/v/vanilla-tilt.js"></script>
+	<!--翻專式圖片end-->
+
+	<!--公告用-->
+	<script src="js/b/offcanvas.js"></script>
+	<!--公告用end-->
+</body>
+</html>

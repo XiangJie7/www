@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="j/demo.css" rel="stylesheet">
+    <!-- Object Fit polyfill -->
+    <script src="https://unpkg.com/object-fit-images/dist/ofi.min.js"></script>
+    <!-- Lazy Load images -->
+    <!-- <script src="https://unpkg.com/object-fit-images/dist/ofi.min.js"></script> -->
+    <!-- Jarallax 視差-->
+    <link href="j/jarallax.css" rel="stylesheet">
+    <script src="j/jarallax.js"></script>
+    <script src="j/jarallax-video.js"></script>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <!--用法
+    <div class="demo-carousel">
+        <div class="demo-carousel-item jarallax" data-speed="0.1">
+            <img class="jarallax-img" src="images/image3.jpg" alt="">
+        </div>
+        <div class="demo-carousel-item jarallax" data-speed="0.4" data-video-src="mp4:video/local-video.mp4,webm:video/local-video.webm,ogv:video/local-video.ogv">
+            <img class="jarallax-img" src="video/local-video.png" alt="">
+        </div>
+        <div class="demo-carousel-item jarallax" data-speed="0.2">
+            <img class="jarallax-img" src="images/image6.jpg" alt="">
+        </div>
+        <div class="demo-carousel-item jarallax" data-speed="0.3">
+            <img class="jarallax-img" src="images/image5.jpg" alt="">
+        </div>
+    </div>
+    -->
+    <div class="jarallax">
+        <img class="jarallax-img" src="j/images/sr.jpg" alt="">
+        <div class="demo-table">
+            <div class="demo-table-cell">
+                <h1>99%自學幼兒園</h1>
+            </div>
+        </div>
+    </div>
+    <div class="demo-gap">
+        <div class="container">
+            <h1>安心 信賴 有保障</h1>
+        </div>
+    </div>
+    <div class="jarallax" data-speed="0.2">
+        <img class="jarallax-img" src="j/images/chr3.jpg" alt="">
+    </div>
+    <div class="demo-gap">
+        <h1>專業師資</h1>
+    </div>
+    <div class="jarallax" data-speed="-0.2">
+        <img class="jarallax-img" src="j/images/cr1.jpg" alt="">
+    </div>
+    <div class="demo-gap">
+        <h2>優質環境</h2>
+    </div>
+    <div class="jarallax" data-speed="1.4">
+        <img class="jarallax-img" src="j/images/s.jpg" alt="">
+    </div>
+
+    <div class="demo-gap bg-light">
+        <h2 style="background-color: white;">孩子開心 👋 家長放心 👋</h2>
+    </div>
+    <div class="demo-gap-half">
+        <div class="demo-gap-1">
+            <div class="jarallax" data-speed="0.2">
+                <img class="jarallax-img" src="j/images/cr3.jpg" alt="">
+            </div>
+        </div>
+        <div class="demo-gap-2" data-speed="0">
+            <div class="jarallax">
+                <img class="jarallax-img" src="j/images/cr2.jpg" alt="">
+            </div>
+            <div class="jarallax" data-speed="1.4">
+                <img class="jarallax-img" src="j/images/c.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-gap bg-info">
+        <h2 style="color: lightgreen">➲➲➲ <a href="index2.html"><button type="button" class="btn btn-warning">回首頁</button></a></h2>
+    </div>
+
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script type="text/javascript">
+        // object-fit polyfill run
+        objectFitImages();
+
+        /* init Jarallax */
+        jarallax(document.querySelectorAll('.jarallax'));
+
+        jarallax(document.querySelectorAll('.jarallax-keep-img'), {
+            keepImg: true,
+        });
+
+        /* init Flickity Carousel + Jarallax inside it */
+        // new Flickity( '.demo-carousel', {
+        //     initialIndex: 1,
+        //     autoPlay: 3000,
+        //     pauseAutoPlayOnHover: false,
+        //     pageDots: false,
+        //     prevNextButtons: false,
+        //     wrapAround: true
+        // });
+        // jarallax(document.querySelectorAll('.demo-carousel .jarallax'), {
+        //     elementInViewport: document.querySelectorAll('.demo-carousel')
+        // });
+
+        /* init Jarallax with jQuery */
+        // $('.jarallax').jarallax({
+        //     speed: 0.5,
+        //     imgWidth: 1366,
+        //     imgHeight: 768
+        // });
+    </script>
+</body>
+</html>
