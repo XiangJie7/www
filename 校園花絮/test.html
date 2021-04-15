@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item{
+            background-color: lightslategrey;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+        .item >div :hover{
+            opacity: 0;
+            transition:  all 5s 1s;
+            
+        }
+        .container {
+            margin: auto;
+            width: 500px;
+            height: 200px;
+            text-align: center;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 38%;
+        }
+
+        .container>div {
+            background-color: #333;
+            border-radius: 50%;
+            height: 2em;
+            width: 2em;
+            margin: 1em;
+            animation: wave 2.2s ease-in-out infinite;
+        }
+
+        .container .rect2 {
+            animation-delay: .2s;
+        }
+
+        .container .rect3 {
+            animation-delay: .4s;
+        }
+
+        .container .rect4 {
+            animation-delay: .6s;
+        }
+
+        .container .rect5 {
+            animation-delay: .8s;
+        }
+
+        @keyframes wave {
+
+            50%,
+            70% {
+                transform: scale(2, 2);
+                -webkit-transform: scale(2, 2);
+            }
+
+            80% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item" id="item">
+        <div class="container">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+    <div>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, similique.</h1>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="queryloader2.min.js" type="text/javascript"></script>
+    <script src="vanilla-tilt.js"></script>
+    <style type="text/css">
+        #image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 90% 6% 93% 5% / 5% 94% 7% 95%;
+            transform: rotate(2deg);
+            -webkit-box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .zi_hr_01 {
+            height: 35px;
+            background-color: skyblue;
+            background-image: url(b_illust_96_0M.png)
+        }
+
+        .navbar {
+            opacity: 0.6;
+        }
+
+
+        #image {
+            display: flex;
+            margin-left: -10px;
+            flex-wrap: wrap;
+            text-align: center;
+            height: 400px;
+        }
+
+
+        @import url('https://fonts.googleapis.com/css?family=Codystar:300&display=swap');
+
+
+
+        .neons {
+            margin-top: 4rem;
+            text-align: center;
+            background-color: transparent;
+            position: fixed;
+            bottom: 40%;
+            right: 0%;
+            font-family: 'Codystar';
+
+        }
+
+        .neons h1 {
+            font-size: 4rem;
+            text-align: right;
+            font-weight: bold;
+
+
+            -webkit-animation: glow 2s  infinite alternate;
+            -moz-animation: glow 2s  infinite alternate;
+            animation: glow 2s  infinite alternate;
+
+        }
+
+        .neons h1 :hover {
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .neons h1 :active {
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        @-webkit-keyframes glow {
+            from {
+                color:blue;
+                text-shadow: 0 0 100px red, 0 0 200px orange, 0 0 300px yellow, 0 0 400px green, 0 0 500px skyblue, 0 0 600px blue, 0 0 700px purple, 0 0 900px pink;
+            }
+
+            to {
+                color:maroon;
+                text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px skyblue, 0 0 60px blue, 0 0 70px purple, 0 0 90px pink;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                color:blue;
+                text-shadow: 0 0 100px red, 0 0 200px orange, 0 0 300px yellow, 0 0 400px green, 0 0 500px skyblue, 0 0 600px blue, 0 0 700px purple, 0 0 900px pink;
+            }
+
+            to {
+                color:maroon;
+                text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px skyblue, 0 0 60px blue, 0 0 70px purple, 0 0 90px pink;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-image: url(背景.jpg);">
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
+        <div class="container">
+            <a class="navbar-brand" href="../index2.html">99%自學幼兒園</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">校園花絮</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="活動相簿.html">活動相簿</a>
+                            <a class="dropdown-item" href="生活寫真.html">生活寫真</a>
+                            <a class="dropdown-item" href="校園風景.html">校園風景</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container" style="padding-top: 50px;">
+        <h1 class="my-3">生活寫真 <small>99%自學中心</small> </h1>
+        <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="../index2.html">首頁</a>
+            <span class="breadcrumb-item active">活動相簿</span>
+        </nav>
+        <hr class="zi_hr_01">
+    </div>
+
+    <div class="container " style="background-color: transparent; ">
+        <div id="image">
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/1.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/2.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/3.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/4.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/5.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/6.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/7.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/8.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/9.jpg">
+            </div>
+            <div class="animate__animated animate__fadeIn animate__delay-1s animate__slow">
+                <img data-tilt style="margin: 40px;" src="生活寫真/10.jpg">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" style="width: 200px; height: 200px;">
+        <div class="row">
+            <div class="neons col-12">
+                <a href="../招生資訊/index.html" style="text-decoration:none;"><h1><em>{ Join Us }</em></h1></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', function () {
+            QueryLoader2(document.querySelector("body"), {
+                barColor: "red",
+                backgroundColor: "skyblue",
+                percentage: true,
+                barHeight: 1,
+                minimumTime: 200,
+                fadeoutime: 100
+            });
+        });
+    </script>
+</body>
+
+</html>

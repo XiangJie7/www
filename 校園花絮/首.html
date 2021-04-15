@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js demo-4">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>BookBlock: A Content Flip Plugin - Demo 4</title>
+    <meta name="description" content="Bookblock: A Content Flip Plugin - Demo 4" />
+    <meta name="keywords" content="javascript, jquery, plugin, css3, flip, page, 3d, booklet, book, perspective" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="BookBlock/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="BookBlock/css/bookblock.css" />
+    <!-- custom demo style -->
+    <link rel="stylesheet" type="text/css" href="BookBlock/css/demo4.css" />
+    <script src="BookBlock/js/modernizr.custom.js"></script>
+    <style>
+        .img {
+            background: #F4F0EC;
+            padding: 10%;
+            border: 8px solid #333;
+            box-shadow: 0 0 0 50px rgba(125, 135, 18, 0.3) inset, 0 0 0 11px rgb(180, 130, 90),
+                0 0 30px rgba(0, 0, 0, 0.8) inset,
+                0 30px 20px rgba(0, 0, 0, 0.3);
+            outline: 2px solid #333;
+            outline-offset: 0px;
+        }
+        #href{
+            color:lightslategrey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bb-custom-wrapper">
+            <div id="bb-bookblock" class="bb-bookblock">
+                <div class="bb-item" style="position:fixed;">
+                    <div class="bb-custom-firstpage">
+                        <h1>校園花絮 <span>99%自學中心</span></h1>
+                        <nav class="codrops-nav">
+                            <a class="codrops-icon codrops-icon-prev"
+                                href="首.html"><span>校園花絮</span></a>
+                            <a class="codrops-icon codrops-icon-drop"
+                                href="../index2.html"><span>Back
+                                    to Home</span></a>
+                        </nav>
+                    </div>
+                    <div class="bb-custom-side">
+                        <div class="img">
+                            <img src="11.jpg" style="width: 540px; ">
+                        </div>
+                        <p>活動相簿</p>
+                        <a id="href" href="活動相簿.html">
+                            <li>前往</li>
+                        </a>
+                    </div>
+                </div>
+                <div class="bb-item" style="position:fixed;">
+                    <div class="bb-custom-side">
+                        <div class="img">
+                            <img src="12.jpg" style="width: 540px;">
+                        </div>
+                        <p>生活寫真</p>
+                        <a id="href" href="生活寫真.html">
+                            <li>前往</li>
+                        </a>
+                    </div>
+                    <div class="bb-custom-side">
+                        <div class="img">
+                            <img src="15.jpg" style="width: 540px;">
+                        </div>
+                        <p>校園風景</p>
+                        <a id="href" href="校園風景.html">
+                            <li>前往</li>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <nav>
+                <a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">First page</a>
+                <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
+                <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
+                <a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
+            </nav>
+
+        </div>
+
+    </div><!-- /container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="BookBlock/js/jquerypp.custom.js"></script>
+    <script src="BookBlock/js/jquery.bookblock.js"></script>
+    <script>
+        var Page = (function () {
+
+            var config = {
+                $bookBlock: $('#bb-bookblock'),
+                $navNext: $('#bb-nav-next'),
+                $navPrev: $('#bb-nav-prev'),
+                $navFirst: $('#bb-nav-first'),
+                $navLast: $('#bb-nav-last')
+            },
+                init = function () {
+                    config.$bookBlock.bookblock({
+                        speed: 1000,
+                        shadowSides: 0.8,
+                        shadowFlip: 0.4
+                    });
+                    initEvents();
+                },
+                initEvents = function () {
+
+                    var $slides = config.$bookBlock.children();
+
+                    // add navigation events
+                    config.$navNext.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('next');
+                        return false;
+                    });
+
+                    config.$navPrev.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('prev');
+                        return false;
+                    });
+
+                    config.$navFirst.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('first');
+                        return false;
+                    });
+
+                    config.$navLast.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('last');
+                        return false;
+                    });
+
+                    // add swipe events
+                    $slides.on({
+                        'swipeleft': function (event) {
+                            config.$bookBlock.bookblock('next');
+                            return false;
+                        },
+                        'swiperight': function (event) {
+                            config.$bookBlock.bookblock('prev');
+                            return false;
+                        }
+                    });
+
+                    // add keyboard events
+                    $(document).keydown(function (e) {
+                        var keyCode = e.keyCode || e.which,
+                            arrow = {
+                                left: 37,
+                                up: 38,
+                                right: 39,
+                                down: 40
+                            };
+
+                        switch (keyCode) {
+                            case arrow.left:
+                                config.$bookBlock.bookblock('prev');
+                                break;
+                            case arrow.right:
+                                config.$bookBlock.bookblock('next');
+                                break;
+                        }
+                    });
+                };
+
+            return { init: init };
+
+        })();
+    </script>
+    <script>
+        Page.init();
+    </script>
+</body>
+
+</html>
